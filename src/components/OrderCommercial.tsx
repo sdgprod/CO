@@ -19,6 +19,7 @@ import {
   DollarSign
 } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 import RightSidebar from './RightSidebar';
 
 interface OrderCommercialProps {
@@ -284,7 +285,12 @@ const OrderCommercial: React.FC<OrderCommercialProps> = ({ onBackToSearch, onNav
       <Header currentPage="order-commercial" onNavigate={onNavigate} />
 
       {/* Main Content */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 py-8">
+      <main className="relative w-full px-4 sm:px-6 lg:px-8 py-8">
+        <DevNote
+          note="Order Commercial Review (OCR) screen. Sales PIC enters order details: product type, volume, pricing, incoterms, payment terms, credit limit requested. System validates against company risk profile. Approver can accept/reject/modify terms. All changes audit-logged."
+          title="Order Commercial Review"
+          position="top-right"
+        />
         <div className="flex gap-6">
           {/* Left Column - 75% */}
           <div className="w-3/4">

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Search, Building2, FileText, Globe, CreditCard, User, Hash, MapPin, Code } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 
 const countries = [
   'Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola', 'Argentina', 'Armenia', 'Australia',
@@ -73,7 +74,12 @@ const ProspectSearch: React.FC<ProspectSearchProps> = ({ onSearch, onNavigate })
       <Header currentPage="search" onNavigate={onNavigate} />
 
       {/* Main Content */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 py-12">
+      <main className="relative w-full px-4 sm:px-6 lg:px-8 py-12">
+        <DevNote
+          note="Search screen is the entry point for new customer onboarding. Sales PIC enters company details here. Required fields: Company Name, Country, Registration No. The search triggers Company Background (CB) lookup from external data providers. Results populate the BackgroundSearchResult screen."
+          title="Prospect Search"
+          position="top-right"
+        />
         <div className="text-center mb-12">
           <div className="flex items-center justify-center mb-4">
             <h1 className="text-4xl font-bold text-gray-900 mb-0 mr-4">

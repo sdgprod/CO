@@ -16,6 +16,7 @@ import {
   Award
 } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 import RightSidebar from './RightSidebar';
 
 interface CreditRatingReportProps {
@@ -452,7 +453,12 @@ const CreditRatingReport: React.FC<CreditRatingReportProps> = ({ onBackToSearch,
       <Header currentPage="credit-rating" onNavigate={onNavigate} />
 
       {/* Main Content */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 py-8">
+      <main className="relative w-full px-4 sm:px-6 lg:px-8 py-8">
+        <DevNote
+          note="Credit Rating Report (CRR) is the final output of credit assessment. Summarizes: overall rating, recommended credit limit, payment terms, risk factors. This is the document presented to approvers. PDF export required for archival. Links back to CRC calculation details."
+          title="Credit Rating Report"
+          position="top-right"
+        />
         <div className="flex gap-6">
           {/* Left Column - 75% */}
           <div className="w-3/4">

@@ -28,6 +28,7 @@ import {
   Trash2
 } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 import { createClient } from '@supabase/supabase-js';
 
 interface BackgroundSearchResultProps {
@@ -369,7 +370,12 @@ const BackgroundSearchResult: React.FC<BackgroundSearchResultProps> = ({ onBackT
       <Header currentPage="results" onNavigate={onNavigate} />
 
       {/* Main Content */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 py-8">
+      <main className="relative w-full px-4 sm:px-6 lg:px-8 py-8">
+        <DevNote
+          note="Company Background (CB) results screen. Displays data from external provider APIs (e.g., D&B, local registrars). Sections: Company Info, Directors/Shareholders, Financial Summary, Litigation/Legal. Data is read-only here. User reviews and proceeds to next stage or flags for manual review."
+          title="Background Search Results"
+          position="top-right"
+        />
         <div className="flex gap-6">
           {/* Left Column - 75% */}
           <div className="w-3/4">

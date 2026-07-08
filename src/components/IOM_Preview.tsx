@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BarChart3, TrendingUp, CheckCircle, Shield, Building2, User, Eye, AlertTriangle, CreditCard, X, FileText, Sparkles, ArrowLeft, Award, DollarSign } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 import RightSidebar from './RightSidebar';
 
 interface IOM_PreviewProps {
@@ -429,7 +430,12 @@ const IOM_Preview: React.FC<IOM_PreviewProps> = ({ onBackToSearch, onNavigate })
       <Header currentPage="iom" onNavigate={onNavigate} />
 
       {/* Main Content */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 py-8">
+      <main className="relative w-full px-4 sm:px-6 lg:px-8 py-8">
+        <DevNote
+          note="IOM Preview screen. Internal Order Memo consolidates all assessment data into one approval document. Sections: Customer Profile, Order Details, Credit Assessment Summary, Risk Factors, Recommendation. This is a read-only preview before formal submission to approval workflow."
+          title="IOM Preview"
+          position="top-right"
+        />
         <div className="flex gap-6">
           {/* Left Column - 75% */}
           <div className="w-3/4">

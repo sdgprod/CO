@@ -18,6 +18,7 @@ import {
   Award
 } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 import RightSidebar from './RightSidebar';
 
 interface CreditRatingCalculationProps {
@@ -330,7 +331,12 @@ const CreditRatingCalculation: React.FC<CreditRatingCalculationProps> = ({ onBac
       <Header currentPage="credit-rating-calculation" onNavigate={onNavigate} />
 
       {/* Main Content */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 py-8">
+      <main className="relative w-full px-4 sm:px-6 lg:px-8 py-8">
+        <DevNote
+          note="Credit Rating Calculation (CRC) screen. Automated scoring model with weighted criteria: Financial Strength (40%), Payment History (25%), Business Stability (20%), Industry Risk (15%). Score generates rating A-E. Manual override available for Credit Committee with justification. Rating feeds into IOM recommendation."
+          title="Credit Rating Calculation"
+          position="top-right"
+        />
         <div className="flex gap-6">
           {/* Left Column - 75% */}
           <div className="w-3/4">

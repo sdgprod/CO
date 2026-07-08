@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { BarChart3, TrendingUp, CheckCircle, Shield, Building2, User, Eye, AlertTriangle, CreditCard, X, FileText, Sparkles, ArrowLeft, Award, DollarSign } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 import RightSidebar from './RightSidebar';
 
 interface IOM_B2B_B1MProps {
@@ -429,7 +430,12 @@ const IOM_B2B_B1M: React.FC<IOM_B2B_B1MProps> = ({ onBackToSearch, onNavigate })
       <Header currentPage="iom-b2b-b1m" onNavigate={onNavigate} />
 
       {/* Main Content */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 py-8">
+      <main className="relative w-full px-4 sm:px-6 lg:px-8 py-8">
+        <DevNote
+          note="IOM B2B/B1M variant. This version is specifically for B2B and Bulk (B1M) segment customers. Includes additional fields: volume commitments, contract duration, pricing structure, delivery schedule. Approval routing differs from B2C — requires additional HBU sign-off for bulk volumes."
+          title="IOM B2B / B1M"
+          position="top-right"
+        />
         <div className="flex gap-6">
           {/* Left Column - 75% */}
           <div className="w-3/4">

@@ -25,6 +25,7 @@ import {
   DollarSign
 } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 import RightSidebar from './RightSidebar';
 
 interface KYC6SanctionReportProps {
@@ -264,7 +265,12 @@ const KYC6SanctionReport: React.FC<KYC6SanctionReportProps> = ({ onBackToSearch,
       <Header currentPage="kyc6-sanction" onNavigate={onNavigate} />
 
       {/* Main Content */}
-      <main className="w-full px-4 sm:px-6 lg:px-8 py-8">
+      <main className="relative w-full px-4 sm:px-6 lg:px-8 py-8">
+        <DevNote
+          note="KYC6 Sanction Report screen. Checks customer against global sanctions lists (OFAC, EU, UN, local). Displays: match results, PEP status, adverse media hits. Red flags auto-escalate to compliance team. Green = clear, Amber = manual review needed, Red = blocked. Results must be stored for audit trail (7-year retention)."
+          title="KYC6 Sanction Report"
+          position="top-right"
+        />
         <div className="flex gap-6">
           {/* Left Column - 75% */}
           <div className="w-3/4">

@@ -19,6 +19,7 @@ import {
   Package
 } from 'lucide-react';
 import Header from './Header';
+import DevNote from './DevNote';
 
 interface DashboardProps {
   onNavigate: (page: 'dashboard' | 'search' | 'results' | 'db-report' | 'order-commercial' | 'kyc6-sanction' | 'credit-rating-calculation' | 'credit-rating' | 'iom' | 'iom-b2b-b1m' | 'analytics' | 'project-doc') => void;
@@ -353,7 +354,12 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
           </div>
 
           {/* Summary Cards */}
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+          <div className="relative grid grid-cols-1 md:grid-cols-4 gap-4 mb-6">
+            <DevNote
+              note="Summary cards show real-time KPIs. Data should come from aggregated query on onboarding_requests table. Total = all records, Completed = status='Done', In Progress = status='In Progress', Avg Time = AVG(time_elapsed) for completed records."
+              title="Summary Cards"
+              position="top-right"
+            />
             <div className="bg-white rounded-xl shadow-lg border border-gray-200 p-4">
               <div className="flex items-center">
                 <div className="w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center mr-3">
@@ -459,7 +465,12 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         </div>
 
         {/* Request Table */}
-        <div className="bg-white rounded-xl shadow-lg border border-gray-200 mb-6">
+        <div className="relative bg-white rounded-xl shadow-lg border border-gray-200 mb-6">
+          <DevNote
+            note="Request Table tracks the onboarding pipeline from initial request to IOM submission. Each row = one customer application. Stages progress: KYC -> Order Commercial -> Credit Rating -> IOM. Time column shows days since request started. Clicking a row should open detail modal with full info."
+            title="Request Table"
+            position="top-right"
+          />
           <div className="px-4 py-3 border-b border-gray-200">
             <h2 className="text-lg font-bold text-gray-900 flex items-center">
               <BarChart3 className="w-5 h-5 mr-2 text-blue-600" />
@@ -571,7 +582,12 @@ const Dashboard: React.FC<DashboardProps> = ({ onNavigate }) => {
         </div>
 
         {/* Approval Table */}
-        <div className="bg-white rounded-xl shadow-lg border border-gray-200">
+        <div className="relative bg-white rounded-xl shadow-lg border border-gray-200">
+          <DevNote
+            note="Approval Table tracks post-IOM approval workflow. 3 approval stages: HBU & HBS -> Credit Committee -> Group Managing Director. Each approval level has its own SLA. Records move here after IOM is submitted. Status reflects current approver's decision."
+            title="Approval Table"
+            position="top-right"
+          />
           <div className="px-4 py-3 border-b border-gray-200">
             <h2 className="text-lg font-bold text-gray-900 flex items-center">
               <CheckCircle className="w-5 h-5 mr-2 text-green-600" />
